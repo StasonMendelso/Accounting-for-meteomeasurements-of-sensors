@@ -1,27 +1,25 @@
 package com.stanislav.dto;
 
-import com.stanislav.models.Measurement;
-
 import java.util.List;
 
 /**
  * @author Stanislav Hlova
  */
 public class MeasurementResponse {
-    private List<MeasurementDTO> measurements;
+    private List<MeasurementDTOResponse> measurements;
 
     public MeasurementResponse() {
     }
 
-    public MeasurementResponse(List<MeasurementDTO> measurements) {
+    public MeasurementResponse(List<MeasurementDTOResponse> measurements) {
         this.measurements = measurements;
     }
 
-    public List<MeasurementDTO> getMeasurements() {
+    public List<MeasurementDTOResponse> getMeasurements() {
         return measurements;
     }
 
-    public void setMeasurements(List<MeasurementDTO> measurements) {
+    public void setMeasurements(List<MeasurementDTOResponse> measurements) {
         this.measurements = measurements;
     }
 }

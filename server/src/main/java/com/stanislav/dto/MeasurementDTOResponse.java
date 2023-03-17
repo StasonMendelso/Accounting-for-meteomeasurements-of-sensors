@@ -5,7 +5,7 @@ import java.time.LocalDateTime;
 /**
  * @author Stanislav Hlova
  */
-public class MeasurementDTO {
+public class MeasurementDTOResponse {
     private double temperature;
 
     private boolean raining;
@@ -14,7 +14,7 @@ public class MeasurementDTO {
 
     private LocalDateTime time;
 
-    public MeasurementDTO() {
+    public MeasurementDTOResponse() {
     }
 
     public double getTemperature() {

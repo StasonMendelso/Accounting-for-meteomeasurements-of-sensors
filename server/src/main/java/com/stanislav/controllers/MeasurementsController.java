@@ -1,6 +1,7 @@
 package com.stanislav.controllers;
 
 import com.stanislav.dto.MeasurementResponse;
+import com.stanislav.dto.RainyDaysCountResponse;
 import com.stanislav.services.MeasurementsService;
 import com.stanislav.services.TransformerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,4 +31,8 @@ public class MeasurementsController {
         return new MeasurementResponse(transformerService.convertToDTOList(measurementsService.getAll()));
     }
 
+    @GetMapping("/rainyDaysCount")
+    public RainyDaysCountResponse getRainyDaysCount() {
+        return new RainyDaysCountResponse(measurementsService.getRainyDaysCount());
+    }
 }
