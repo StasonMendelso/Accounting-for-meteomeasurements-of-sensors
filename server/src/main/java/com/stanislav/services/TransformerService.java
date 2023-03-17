@@ -1,5 +1,6 @@
 package com.stanislav.services;
 
+import com.stanislav.dto.MeasurementDTORequest;
 import com.stanislav.dto.MeasurementDTOResponse;
 import com.stanislav.dto.SensorDTO;
 import com.stanislav.models.Measurement;
@@ -38,5 +39,11 @@ public class TransformerService {
 
     public List<MeasurementDTOResponse> convertToDTOList(List<Measurement> measurements) {
         return measurements.stream().map(this::convertToDTO).toList();
+    }
+
+    public Measurement convertToModel(MeasurementDTORequest measurementDTORequest) {
+        Measurement measurement = modelMapper.map(measurementDTORequest, Measurement.class);
+        measurement.setSensor(convertToModel(measurementDTORequest.getSensor()));
+        return measurement;
     }
 }

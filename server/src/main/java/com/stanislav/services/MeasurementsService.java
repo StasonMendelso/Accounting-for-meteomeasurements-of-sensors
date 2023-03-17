@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDateTime;
 import java.time.ZoneOffset;
 import java.time.temporal.ChronoUnit;
 import java.util.List;
@@ -17,10 +18,12 @@ import java.util.List;
 @Transactional(readOnly = true)
 public class MeasurementsService {
     private final MeasurementsRepository measurementsRepository;
+    private final SensorsService sensorsService;
 
     @Autowired
-    public MeasurementsService(MeasurementsRepository measurementsRepository) {
+    public MeasurementsService(MeasurementsRepository measurementsRepository, SensorsService sensorsService) {
         this.measurementsRepository = measurementsRepository;
+        this.sensorsService = sensorsService;
     }
 
     public List<Measurement> getAll() {
@@ -35,4 +38,10 @@ public class MeasurementsService {
                 .count();
     }
 
+    @Transactional
+    public void addMeasurement(Measurement measurement) {
+        measurement.setTime(LocalDateTime.now());
+        measurement.setSensor(sensorsService.getSensorByName(measurement.getSensor().getName()).get());
+        measurementsRepository.save(measurement);
+    }
 }
