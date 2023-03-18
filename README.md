@@ -117,18 +117,30 @@ you can run after running the server-application. It may be necessary to adjust 
 REST server-application.
 
 ## Endpoints of REST API.
-
-If you want to open them in browser you need to enter one of the two URL:
+##### Endpoints
+Some endpoint to the server:
 
 * "**localhost:{port}/{applicationContext}/measurements**" - to get access to the measurements;
 * "**localhost:{port}/{applicationContext}/sensors**" - to get access to the sensors;
 
 where  **{port}** - is a port, on which you server is running; **{applicationContext}** - is an application
 context name, which you give in your application configuration for this app.
+ 
+##### Examples
+You can use as me a [Postman](https://www.postman.com/) to send these requests:
+![Adding a new sensor.png](images%2Frest-api-server-examples%2FAdding%20a%20new%20sensor.png)
 
-[//]: # (## Examples of Rest Template Client)
+![Adding a sensor with existed name in the system.png](images%2Frest-api-server-examples%2FAdding%20a%20sensor%20with%20existed%20name%20in%20the%20system.png)
 
-[//]: # ( Examples)
+![Adding a new measurement by a sensor.png](images%2Frest-api-server-examples%2FAdding%20a%20new%20measurement%20by%20a%20sensor.png)
+
+![Adding a new measurement by unknown sensor.png](images%2Frest-api-server-examples%2FAdding%20a%20new%20measurement%20by%20unknown%20sensor.png)
+
+![Adding an invalid masurement.png](images%2Frest-api-server-examples%2FAdding%20an%20invalid%20masurement.png)
+
+![Getting all measurements.png](images%2Frest-api-server-examples%2FGetting%20all%20measurements.png)
+
+![Getting a count of rainy days.png](images%2Frest-api-server-examples%2FGetting%20a%20count%20of%20rainy%20days.png)
 
 ## Built With
 
